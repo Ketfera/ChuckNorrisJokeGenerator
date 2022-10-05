@@ -1,0 +1,16 @@
+.mat-column-value {
+    padding-right: 16px;
+    font-weight: 500;
+}
+
+.mat-column-date {
+    min-width: 8rem;
+}
+
+.remove {
+    margin-right: -10px;
+}
+
+mat-icon {
+    color: #3f51b5;
+}

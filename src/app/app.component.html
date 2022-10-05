@@ -1,0 +1,22 @@
+<div class="root">
+    <h1>{{title}}</h1>
+
+    <ng-template [ngIf]="currentJoke === null" [ngIfElse]="jokeExists">
+        <button mat-raised-button color="primary" class="start-button" [class.disabled]="isProcessing" (click)="getNewJoke()">Lay one on me!</button>
+
+        <div class="error">{{errorMessage}}</div>
+        <div class="spacer"></div>
+    </ng-template>
+
+    <ng-template #jokeExists>
+        <p class="joke">{{currentJoke?.value}}</p>
+
+        <div class="button-row">
+            <button mat-raised-button [class.disabled]="isProcessing" (click)="saveJoke()">Keep this joke</button>
+            <button mat-raised-button color="primary" [class.disabled]="isProcessing" (click)="getNewJoke()">Hit me again!</button>
+        </div>
+        <div class="error">{{errorMessage}}</div>
+    </ng-template>
+
+    <app-joke-list></app-joke-list>
+</div>
