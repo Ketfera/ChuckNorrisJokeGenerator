@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 
 import { firstValueFrom } from 'rxjs';
 
-import { Joke } from '../../model/joke';
+import { Joke } from '../model/joke';
 
 @Injectable({
   providedIn: 'root'
 })
-// Handles all HTTP calls
+// Handles all HTTP calls.
 export class HttpService {
   private jokeUrl = 'https://api.chucknorris.io/jokes/random';
   private profanityCheckerUrl = 'https://www.purgomalum.com/service/containsprofanity?text=';
@@ -27,6 +27,7 @@ export class HttpService {
         return joke;
     }
 
+    // Throw an error because an accetable joke couldn't be found within the number of attempts allowed
     throw Error();
   }
 
